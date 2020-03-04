@@ -1,7 +1,5 @@
 from django.test import Client, TestCase
 
-from .views import validate_postcode
-
 
 class TestPostcodes(TestCase):
     """Tests for validate_postcode function."""
@@ -10,11 +8,13 @@ class TestPostcodes(TestCase):
 
     def test_valid_postcode_with_space(self):
         response = self.client.get('/DN55 1PT/')
-        self.assertEqual(response, 'DN55 1PT is a valid UK postcode.')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content.decode("utf-8"), 'DN55 1PT is a valid UK postcode.')
 
     def test_valid_postcode_with_no_space(self):
         response = self.client.get('/DN551PT/')
-        self.assertEqual(response, 'DN55 1PT is a valid UK postcode.')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content.decode("utf-8"), 'DN55 1PT is a valid UK postcode.')
 
     def test_valid_postcode_A9_format(self):
         pass
