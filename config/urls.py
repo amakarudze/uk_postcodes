@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, re_path
+
+from postcodes_api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('postcodes_api/', include('postcodes_api.urls')),
+    re_path('([\w ]+)/$',  views.validate_postcode, name="index"),
 ]
