@@ -18,17 +18,13 @@ def validate_postcode(request, code):
         # Check for whitespace between outer and inner parts and add one if absent
         if postcode[-4] == " ":
             formatted_postcode = postcode
-            print(formatted_postcode)
         else:
             if len(postcode) == 5:
                 formatted_postcode = postcode[:2] + " " + postcode[2:]
-                print(formatted_postcode)
             elif len(postcode) == 6:
                 formatted_postcode = postcode[:3] + " " + postcode[3:]
-                print(formatted_postcode)
             elif len(postcode) == 7:
                 formatted_postcode = postcode[:4] + " " + postcode[4:]
-                print(formatted_postcode)
             else:
                 raise ValueError("Invalid postcode.")
 
