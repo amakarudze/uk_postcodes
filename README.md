@@ -13,7 +13,7 @@ A library for formatting and validating UK postcodes.
 * Create and activate a virtual environment and run ```pip install -r requirements.txt```.
 
 ### Running Tests
-To run tests, run ```pytest```.
+To run tests, run ```python manage.py test```.
 
 ## Usage
 To use this api send a request with the postcode you want to format and validate to this url: 
