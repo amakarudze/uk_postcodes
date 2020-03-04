@@ -8,7 +8,7 @@ def validate_postcode(request, code):
     postcode = code.upper()
     print(postcode)
     if len(postcode) < 5 or len(postcode) > 8:
-        raise ValueError(f"Invalid postcode - {postcode}.")
+        return HttpResponse(f"Invalid postcode - {postcode}.")
 
     pattern = r"^(([A-Z]{1,2}[0-9][A-Z0-9]?|ASCN|STHL|TDCU|BBND|[BFS]IQQ|PCRN|TKCA) " \
               r"?[0-9][A-Z]{2}|BFPO ?[0-9]{1,4}|(KY[0-9]|MSR|VG|AI)[ -]?[0-9]{4}|[A-Z]{2} " \
@@ -32,4 +32,4 @@ def validate_postcode(request, code):
 
         return HttpResponse(message)
     else:
-        raise ValueError(f"Invalid postcode - {postcode}.")
+        return HttpResponse(f"Invalid postcode - {postcode}.")
