@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+from .views import validate_postcode
+
+
+class TestPostcodes(TestCase):
+    pass
