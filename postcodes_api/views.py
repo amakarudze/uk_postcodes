@@ -6,7 +6,7 @@ from django.shortcuts import HttpResponse
 def validate_postcode(request, code):
     # Format postcode into uppercase
     postcode = code.upper()
-    print(postcode)
+
     if len(postcode) < 5 or len(postcode) > 8:
         return HttpResponse(f"Invalid postcode - {postcode}.")
 
