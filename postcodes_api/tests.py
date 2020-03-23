@@ -47,7 +47,9 @@ class TestPostcodes(TestCase):
         self.assertEqual(response.content.decode("utf-8"), 'GU16 7HF is a valid UK postcode.')
 
     def test_invalid_postcode(self):
-        pass
+        response = self.client.get('/EC1 A1B/')
+        self.assertRaises(ValueError)
+        self.assertEqual(response.content.decode("utf-8"), 'Invalid postcode - EC1 A1B.')
 
     def test_invalid_postcode_too_short(self):
         pass
