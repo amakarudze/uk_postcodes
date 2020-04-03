@@ -6,11 +6,12 @@ A library for formatting and validating UK postcodes.
 ### Requirements
 * Python 3.7+
 * Django
-* Pytest
+* [Code-Point Open](https://www.ordnancesurvey.co.uk/business-government/products/code-point-open) UK postcode data.
 
 ### Installing
 * Clone the repo.
 * Create and activate a virtual environment and run ```pip install -r requirements.txt```.
+* Download the 1.7 million current UK postcodes from [Code-Point Open](https://www.ordnancesurvey.co.uk/business-government/products/code-point-open) for testing.
 
 ### Running Tests
 To run tests, run ```python manage.py test```.
