@@ -3,5 +3,5 @@ venv/
 */__pycache__/
 db.sqlite3
 postcodes_api/migrations/__pycache__/
-/Data/
 .DS_Store
+.pytest_cache/
